@@ -1288,7 +1288,6 @@ function pinboard_current_location() {
 		} else
 			$archive = ''; ?>
 		<hgroup id="current-location">
-			<h6 class="prefix-text"><?php _e( 'Currently browsing', 'pinboard' ); ?> <?php echo $archive; ?></h6>
 			<<?php pinboard_title_tag( 'location' ); ?> class="page-title">
 				<?php if( isset( $pinboard_page_template ) ) {
 					echo the_title();

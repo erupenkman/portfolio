@@ -6,9 +6,6 @@
 		<div class="entry-container">
 			<header class="entry-header">
 				<<?php pinboard_title_tag( 'post' ); ?> class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></<?php pinboard_title_tag( 'post' ); ?>>
-				<?php if( pinboard_post_is_full_width() ) : ?>
-					<?php pinboard_entry_meta(); ?>
-				<?php endif; ?>
 			</header><!-- .entry-header -->
 			<?php if( pinboard_post_is_full_width() ) : ?>
 				<?php pinboard_post_thumbnail(); ?>
@@ -20,8 +17,6 @@
 			<?php endif; ?>
 			<div class="clear"></div>
 		</div><!-- .entry-container -->
-		<?php if( ! pinboard_post_is_full_width() ) : ?>
-			<?php pinboard_entry_meta(); ?>
-		<?php endif; ?>
+
 	</div><!-- .entry -->
 </article><!-- .post -->
