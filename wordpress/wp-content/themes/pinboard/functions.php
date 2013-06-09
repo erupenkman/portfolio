@@ -551,7 +551,6 @@ function pinboard_register_styles() {
 		$pinboard_deps = false;
 	wp_register_style( 'pinboard', get_stylesheet_uri(), $pinboard_deps, null );
 	wp_register_style( 'colorbox', get_template_directory_uri() . '/styles/colorbox.css', false, null );
-	wp_register_style( 'mediaelementplayer', get_template_directory_uri() . '/styles/mediaelementplayer.css', false, null );
 }
 endif;
 
@@ -570,7 +569,6 @@ function pinboard_enqueue_styles() {
 	wp_enqueue_style( 'pinboard' );
 	if( pinboard_get_option( 'lightbox' ) )
 		wp_enqueue_style( 'colorbox' );
-	wp_enqueue_style( 'mediaelementplayer' );
 }
 endif;
 
@@ -589,9 +587,6 @@ function pinboard_register_scripts() {
 	wp_register_script( 'flexslider', get_template_directory_uri() . '/scripts/jquery.flexslider-min.js', array( 'jquery' ), null );
 	wp_register_script( 'masonry', get_template_directory_uri() . '/scripts/jquery.masonry.min.js', array( 'jquery-migrate' ), null );
 	wp_register_script( 'colorbox', get_template_directory_uri() . '/scripts/colorbox.js', array( 'jquery-migrate' ), null );
-	wp_register_script( 'fitvids', get_template_directory_uri() . '/scripts/fitvids.js', array( 'jquery' ), null );
-	wp_register_script( 'mediaelement', get_template_directory_uri() . '/scripts/mediaelement.js', array( 'jquery' ), null );
-	wp_register_script( 'mediaelementplayer', get_template_directory_uri() . '/scripts/mediaelementplayer.js', array( 'mediaelement' ), null );
 	wp_register_script( 'infinitescroll', get_template_directory_uri() . '/scripts/jquery.infinitescroll.js', array( 'jquery-migrate' ), null );
 }
 endif;
@@ -612,7 +607,6 @@ function pinboard_enqueue_scripts() {
 	wp_enqueue_script( 'jquery-migrate' );
 	wp_enqueue_script( 'flexslider' );
 	wp_enqueue_script( 'fitvids' );
-	wp_enqueue_script( 'mediaelementplayer' );
 	if( 'infinite' == pinboard_get_option( 'posts_nav' ) && ! is_singular() && ! is_paged() || ( is_page_template( 'template-blog.php' ) || is_page_template( 'template-blog-full-width.php' ) || is_page_template( 'template-blog-four-col.php' ) || is_page_template( 'template-blog-left-sidebar.php' ) || is_page_template( 'template-blog-no-sidebars.php' ) || is_page_template( 'template-portfolio.php' ) || is_page_template( 'template-portfolio-right-sidebar.php' ) || is_page_template( 'template-portfolio-four-col.php' ) || is_page_template( 'template-portfolio-left-sidebar.php' ) || is_page_template( 'template-portfolio-no-sidebars.php' ) && ! is_paged() ) )
 		wp_enqueue_script( 'infinitescroll' );
 	if( ! is_singular() || is_page_template( 'template-blog.php' ) || is_page_template( 'template-blog-full-width.php' ) || is_page_template( 'template-blog-four-col.php' ) || is_page_template( 'template-blog-left-sidebar.php' ) || is_page_template( 'template-blog-no-sidebars.php' ) || is_page_template( 'template-blog-no-sidebars.php' ) || is_page_template( 'template-portfolio.php' ) || is_page_template( 'template-portfolio-right-sidebar.php' ) || is_page_template( 'template-portfolio-four-col.php' ) || is_page_template( 'template-portfolio-left-sidebar.php' ) || is_page_template( 'template-portfolio-no-sidebars.php' ) )
@@ -836,15 +830,6 @@ function pinboard_call_scripts() { ?>
 								pinboard_move_elements($(this));
 							});
 						}
-						$('audio,video').mediaelementplayer({
-							videoWidth: '100%',
-							videoHeight: '100%',
-							audioWidth: '100%',
-							alwaysShowControls: true,
-							features: ['playpause','progress','tracks','volume'],
-							videoVolume: 'horizontal'
-						});
-						$(".entry-attachment, .entry-content").fitVids({ customSelector: "iframe, object, embed"});
 						<?php if( pinboard_get_option( 'lightbox' ) ) : ?>
 							$('.entry-content a[href$=".jpg"],.entry-content a[href$=".jpeg"],.entry-content a[href$=".png"],.entry-content a[href$=".gif"],a.colorbox').colorbox();
 						<?php endif; ?>
@@ -852,15 +837,6 @@ function pinboard_call_scripts() { ?>
 				<?php endif; ?>
 			<?php endif; ?>
 		<?php endif; ?>
-		$('audio,video').mediaelementplayer({
-			videoWidth: '100%',
-			videoHeight: '100%',
-			audioWidth: '100%',
-			alwaysShowControls: true,
-			features: ['playpause','progress','tracks','volume'],
-			videoVolume: 'horizontal'
-		});
-		$(".entry-attachment, .entry-content").fitVids({ customSelector: "iframe, object, embed"});
 	});
 	jQuery(window).load(function() {
 		<?php if( pinboard_get_option( 'lightbox' ) ) : ?>
