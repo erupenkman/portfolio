@@ -27,7 +27,7 @@
 			<nav id="access">
 				<a class="nav-show" href="#access">Show Navigation</a>
 				<a class="nav-hide" href="#nogo">Hide Navigation</a>
-				<?php wp_nav_menu( ); ?>
+				<?php wp_nav_menu( array( 'theme_location' => 'primary_nav' ) ); ?>
 				<div class="clear"></div>
 			</nav><!-- #access -->
 		</header><!-- #header -->

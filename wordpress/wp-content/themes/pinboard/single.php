@@ -30,8 +30,5 @@
 				<?php pinboard_404(); ?>
 			<?php endif; ?>
 		</section><!-- #content -->
-		<?php if( ( 'no-sidebars' != pinboard_get_option( 'layout' ) ) && ( 'full-width' != pinboard_get_option( 'layout' ) ) ) : ?>
-			<?php get_sidebar(); ?>
-		<?php endif; ?>
 	</div><!-- #container -->
 <?php get_footer(); ?>

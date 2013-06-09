@@ -3,8 +3,6 @@
 		<?php if( pinboard_get_option( 'slider' ) ) : ?>
 			<?php get_template_part( 'slider' ); ?>
 		<?php endif; ?>
-		<?php get_sidebar( 'wide' ); ?>
-		<?php get_sidebar( 'boxes' ); ?>
 	<?php endif; ?>
 	<div id="container">
 		<section id="content" <?php pinboard_content_class(); ?>>
@@ -26,9 +24,6 @@
 				<?php pinboard_404(); ?>
 			<?php endif; ?>
 		</section><!-- #content -->
-		<?php if( ( 'no-sidebars' != pinboard_get_option( 'layout' ) ) && ( 'full-width' != pinboard_get_option( 'layout' ) ) ) : ?>
-			<?php get_sidebar(); ?>
-		<?php endif; ?>
 		<div class="clear"></div>
 	</div><!-- #container -->
 <?php get_footer(); ?>
