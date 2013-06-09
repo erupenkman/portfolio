@@ -62,7 +62,7 @@ function pinboard_theme_setup() {
 	
 	// Allows users to set a custom background
 	add_theme_support( 'custom-background', array(
-		'default-image' => get_template_directory_uri() . '/images/bg.jpg',
+		'default-image' => '',
 	) );
 	
 	// Styles the post editor
@@ -771,14 +771,7 @@ function pinboard_call_scripts() { ?>
 		<?php endif; ?>
 		<?php if( ! is_singular() || is_page_template( 'template-blog.php' ) || is_page_template( 'template-blog-full-width.php' ) || is_page_template( 'template-blog-four-col.php' ) || is_page_template( 'template-blog-left-sidebar.php' ) || is_page_template( 'template-blog-no-sidebars.php' ) || is_page_template( 'template-blog-no-sidebars.php' ) || is_page_template( 'template-portfolio.php' ) || is_page_template( 'template-portfolio-right-sidebar.php' ) || is_page_template( 'template-portfolio-four-col.php' ) || is_page_template( 'template-portfolio-left-sidebar.php' ) || is_page_template( 'template-portfolio-no-sidebars.php' ) ) : ?>
 			var $content = $('.entries');
-			$content.imagesLoaded(function() {
-				$content.masonry({
-					itemSelector : '.hentry',
-					columnWidth : function( containerWidth ) {
-						return containerWidth / 12;
-					},
-				});
-			});
+			
 			<?php if( ( ! is_singular() && ! is_paged() ) || ( ( is_page_template( 'template-blog.php' ) || is_page_template( 'template-blog-full-width.php' ) || is_page_template( 'template-blog-four-col.php' ) || is_page_template( 'template-blog-left-sidebar.php' ) || is_page_template( 'template-blog-no-sidebars.php' ) || is_page_template( 'template-blog-no-sidebars.php' ) || is_page_template( 'template-portfolio.php' ) || is_page_template( 'template-portfolio-right-sidebar.php' ) || is_page_template( 'template-portfolio-four-col.php' ) || is_page_template( 'template-portfolio-left-sidebar.php' ) || is_page_template( 'template-portfolio-no-sidebars.php' ) ) && ! is_paged() ) ) : ?>
 				<?php if( 'ajax' == pinboard_get_option( 'posts_nav' ) ) : ?>
 					var nav_link = $('#posts-nav .nav-all a');
@@ -836,11 +829,6 @@ function pinboard_call_scripts() { ?>
 					});
 				<?php endif; ?>
 			<?php endif; ?>
-		<?php endif; ?>
-	});
-	jQuery(window).load(function() {
-		<?php if( pinboard_get_option( 'lightbox' ) ) : ?>
-			jQuery('.entry-content a[href$=".jpg"],.entry-content a[href$=".jpeg"],.entry-content a[href$=".png"],.entry-content a[href$=".gif"],a.colorbox').colorbox();
 		<?php endif; ?>
 	});
 /* ]]> */
