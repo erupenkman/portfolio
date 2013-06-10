@@ -601,6 +601,7 @@ audio {
 }
 
 #header {
+	
 	border-top:#111 3px solid;
 }
 
@@ -613,15 +614,24 @@ audio {
 #site-description {
 	margin:0;
 	font-weight:300;
-	float:left;
-	line-height:150px;
 }
 
 #site-title {
-	margin: 0 3.4%;
-	font-family:"Oswald", sans-serif;
-	font-size:32px;
-	letter-spacing:1px;
+	margin: 0 1.4% 0 3.4%;
+	display: inline;
+	line-height: 150px;
+	font-family: "Oswald", sans-serif;
+	font-size: 32px;
+	letter-spacing: 1px;
+}
+
+#header .tagline {
+	line-height: 150px;
+	color: #666;
+	font: 1.2em/1.5em Georgia,"Times New Roman",Times,serif;
+	font-style: italic;
+	margin: 0;
+	text-align: justify;
 }
 
 #site-title img {
