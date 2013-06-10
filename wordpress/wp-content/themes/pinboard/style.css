@@ -602,7 +602,7 @@ audio {
 
 #header {
 	
-	border-top:#111 3px solid;
+	border-top:#666 3px solid;
 }
 
 #site-title a,
@@ -2451,7 +2451,7 @@ a.ajax-load:hover {
 #copyright {
 	clear:both;				
 	padding:1.4% 3.2%;
-	background:#111;
+	background:#666;
 	border-top:#333 1px solid;
 	border-top:rgba(255, 255, 255, .145) 1px solid;
 	color:#CCC; 
