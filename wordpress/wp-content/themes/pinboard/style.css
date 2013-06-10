@@ -964,6 +964,7 @@ a.social-media-icon:hover {
 .slides {
 	width:100%;
 	overflow:hidden;
+	border-bottom: 50px solid #000;
 }
 
 #slider .slides > li {
@@ -1030,7 +1031,7 @@ a.social-media-icon:hover {
 .flex-pauseplay {
 	position:absolute;
 	right:43px;
-	bottom:8%;
+	bottom:10%;
 	width:100px;
 	margin: 0;
 	list-style: none;
@@ -1079,7 +1080,6 @@ a.social-media-icon:hover {
 	background:none;
 	border:none;
 	color:#fff;
-	text-align:right;
 }
 
 #slider .wp-post-image,
@@ -1087,7 +1087,7 @@ a.social-media-icon:hover {
 	display:block;
 	margin:0 auto;
 	height:500px;
-	padding-bottom:100px;
+	padding-top:78px;
 	width:auto;
 }
 
@@ -1101,11 +1101,11 @@ a.social-media-icon:hover {
 
 #slider .entry-title {
 	display: none;
-	position:absolute;
 	left: 3.3%;
-	bottom:0;
-	z-index:1;
+	right: 3.3%;
 	margin:0;
+	position:absolute;
+	top:0;
 	font-family: "Open Sans", sans-serif;
 	font-size:36px;
 	line-height:1.62em;
@@ -2896,7 +2896,7 @@ a.ajax-load:hover {
 	}
 	
 	#slider {
-		border-bottom: 50px solid #fff;
+		border-bottom: 50px solid #000;
 	}
 	
 	.flex-control-nav {

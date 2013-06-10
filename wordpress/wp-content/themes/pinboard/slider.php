@@ -6,15 +6,12 @@
 			<?php while( $slider->have_posts() ) : $slider->the_post(); ?>
 				<li>
 					<article class="post hentry">
-						<?php if( has_post_format( 'video' ) ) : ?>
-							<?php pinboard_post_video(); ?>
-						<?php else : ?>
-							<?php if( has_post_thumbnail() ) : ?>
-								<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
-									<?php the_post_thumbnail( 'slider-thumb' ); ?>
-								</a>
-							<?php endif; ?>
-							<h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+						<h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+						
+						<?php if( has_post_thumbnail() ) : ?>
+							<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
+								<?php the_post_thumbnail( 'slider-thumb' ); ?>
+							</a>
 						<?php endif; ?>
 						<div class="clear"></div>
 					</article><!-- .post -->
