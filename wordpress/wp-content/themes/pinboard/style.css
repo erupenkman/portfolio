@@ -806,7 +806,7 @@ a.social-media-icon:hover {
 
 #access {
 	padding:0 20px;
-	background:#111;
+	background:#666;
 	box-shadow:0 0 7px rgba(0, 0, 0, .1);
 }
 
@@ -964,7 +964,7 @@ a.social-media-icon:hover {
 .slides {
 	width:100%;
 	overflow:hidden;
-	border-bottom: 50px solid #000;
+	border-bottom: 50px solid #666;
 }
 
 #slider .slides > li {
@@ -2893,10 +2893,6 @@ a.ajax-load:hover {
 		float: none;
 		margin: 18px 0;
 		text-align: center;
-	}
-	
-	#slider {
-		border-bottom: 50px solid #000;
 	}
 	
 	.flex-control-nav {
