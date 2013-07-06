@@ -255,7 +255,6 @@ function pinboard_home_page_slider() { ?>
 
 function pinboard_portfolio_page_options() {
 	add_settings_field( 'pinboard_portfolio_cat', __( 'Portfolio Category', 'pinboard' ), 'pinboard_portfolio_cat', 'pinboard_options', 'pinboard_portfolio_page_options' );
-	add_settings_field( 'pinboard_portfolio_excerpts', __( 'Full posts to display on first page', 'pinboard' ), 'pinboard_portfolio_excerpts', 'pinboard_options', 'pinboard_portfolio_page_options' );
 	add_settings_field( 'pinboard_portfolio_archive_excerpts', __( 'Full posts to display on secondary pages', 'pinboard' ), 'pinboard_portfolio_archive_excerpts', 'pinboard_options', 'pinboard_portfolio_page_options' );
 }
 
@@ -267,14 +266,6 @@ function pinboard_portfolio_cat() {
 			<option value="<?php echo $category->cat_ID; ?>" <?php selected( pinboard_get_option( 'portfolio_cat' ), $category->cat_ID ); ?>><?php echo $category->cat_name; ?></option>
 		<?php endforeach; ?>
 	</select>
-<?php
-}
-
-function pinboard_portfolio_excerpts() { ?>
-	<label class="description">
-		<input name="pinboard_theme_options[portfolio_excerpts]" type="text" value="<?php echo pinboard_get_option( 'portfolio_excerpts' ); ?>" size="2" maxlength="2" />
-		<span><?php _e( 'Full posts to display before grid', 'pinboard' ); ?></span>
-	</label>
 <?php
 }
 
@@ -992,10 +983,7 @@ function pinboard_validate_theme_options( $input ) {
 			if( ! $valid )
 				$input['portfolio_cat'] = pinboard_get_option( 'portfolio_cat' );
 		}
-		if( ! is_numeric( absint( $input['portfolio_excerpts'] ) ) || $input['portfolio_excerpts'] > get_option( 'posts_per_page' ) || '' == $input['portfolio_excerpts'] )
-			$input['portfolio_excerpts'] = pinboard_get_option( 'portfolio_excerpts' );
-		else
-			$input['portfolio_excerpts'] = absint( $input['portfolio_excerpts'] );
+		
 		if( ! is_numeric( absint( $input['portfolio_archive_excerpts'] ) ) || $input['portfolio_archive_excerpts'] > get_option( 'posts_per_page' ) || '' == $input['portfolio_archive_excerpts'] )
 			$input['portfolio_archive_excerpts'] = pinboard_get_option( 'portfolio_archive_excerpts' );
 		else

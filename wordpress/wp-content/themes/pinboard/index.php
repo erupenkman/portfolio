@@ -43,7 +43,7 @@
 	</div><!-- #container -->
 	
 	<script type="text/javascript">
-	jQuery(document).ready(function($){
+	jQuery(document).load(function($){
 		var $container = $('#content .entries');
 		// initialize
 		$container.masonry({
