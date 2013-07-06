@@ -42,4 +42,15 @@
 		<div class="clear"></div>
 	</div><!-- #container -->
 	
+	<script type="text/javascript">
+	jQuery(document).ready(function($){
+		var $container = $('#content .entries');
+		// initialize
+		$container.masonry({
+		  itemSelector: '.post'
+		});
+	
+	});
+	</script>
+	
 <?php get_footer(); ?>

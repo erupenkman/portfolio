@@ -585,9 +585,9 @@ if ( ! function_exists( 'pinboard_register_scripts' ) ) :
 function pinboard_register_scripts() {
 	wp_register_script( 'ios-orientationchange-fix', get_template_directory_uri() . '/scripts/ios-orientationchange-fix.js', false, null );
 	wp_register_script( 'flexslider', get_template_directory_uri() . '/scripts/jquery.flexslider-min.js', array( 'jquery' ), null );
-	wp_register_script( 'masonry', get_template_directory_uri() . '/scripts/jquery.masonry.min.js', array( 'jquery-migrate' ), null );
-	wp_register_script( 'colorbox', get_template_directory_uri() . '/scripts/colorbox.js', array( 'jquery-migrate' ), null );
-	wp_register_script( 'infinitescroll', get_template_directory_uri() . '/scripts/jquery.infinitescroll.js', array( 'jquery-migrate' ), null );
+	wp_register_script( 'masonry', get_template_directory_uri() . '/scripts/jquery.masonry.min.js', array( 'jquery' ), null );
+	wp_register_script( 'colorbox', get_template_directory_uri() . '/scripts/colorbox.js', array( 'jquery' ), null );
+	wp_register_script( 'infinitescroll', get_template_directory_uri() . '/scripts/jquery.infinitescroll.js', array( 'jquery' ), null );
 }
 endif;
 
@@ -814,6 +814,7 @@ function pinboard_call_scripts() { ?>
 						var $entries = $( entries ).css({ opacity: 0 });
 						$entries.imagesLoaded(function(){
 							$entries.animate({ opacity: 1 });
+							console.log('masonary time!');
 							$content.masonry( 'appended', $entries, true );
 						});
 						if( ($(window).width() > 960) || ($(document).width() > 960) ) {

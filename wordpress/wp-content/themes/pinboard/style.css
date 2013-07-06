@@ -3207,7 +3207,7 @@ a.ajax-load:hover {
 	}
 
 }
-
+/*
 .masonry,
 .masonry .masonry-brick {
   -webkit-transition-duration: 0.7s;
@@ -3231,4 +3231,8 @@ a.ajax-load:hover {
       -ms-transition-property: left, right, top;
        -o-transition-property: left, right, top;
           transition-property: left, right, top;
+}*/
+
+.masonry .grid-sizer{
+	width: 33.3%;
 }
