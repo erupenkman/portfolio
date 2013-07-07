@@ -1411,7 +1411,7 @@ a.social-media-icon:hover {
 #comments-title,
 #reply-title {
 	font-family:"Oswald", sans-serif;
-	font-weight:300;
+	font-weight:normal;
 	letter-spacing:1px;
 	overflow: hidden;
 }
@@ -1467,7 +1467,7 @@ a.social-media-icon:hover {
 .page-template-template-blog-php .threecol .entry-title,
 .page-template-template-portfolio-php .twocol .entry-title,
 .page-template-template-portfolio-php .threecol .entry-title {
-	font-size:24px;
+	font-size:20px;
 	line-height:1.62em;
 }
 
@@ -1484,7 +1484,7 @@ a.social-media-icon:hover {
 }
 
 .entry-title a {
-	color:#333;
+	color:#666;
 }
 
 .entry-title a:hover {

@@ -43,8 +43,8 @@
 	</div><!-- #container -->
 	
 	<script type="text/javascript">
-	jQuery(document).load(function($){
-		var $container = $('#content .entries');
+	jQuery(window).load(function(){
+		var $container = jQuery('#content .entries');
 		// initialize
 		$container.masonry({
 		  itemSelector: '.post'
